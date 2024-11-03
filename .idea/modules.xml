@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/LogInsight-UI.iml" filepath="$PROJECT_DIR$/.idea/LogInsight-UI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LogInsightPy.iml" filepath="$PROJECT_DIR$/.idea/LogInsightPy.iml" />
     </modules>
   </component>
 </project>
