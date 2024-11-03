@@ -31,4 +31,4 @@ ps -ef | grep "python"
 # shellcheck disable=SC2046
 ps aux | grep [p]ython | awk '{print $2}' | xargs -I {} kill -9 {}
 
-nohup /usr/bin/python3 ./manage.py runserver 127.0.0.1:8000  --noreload
+nohup /usr/bin/python3 ./manage.py runserver 127.0.0.1:8000  --noreload >> ~/log/running_ai.log 2>&1 &
