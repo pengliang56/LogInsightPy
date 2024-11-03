@@ -37,4 +37,5 @@ jobs:
           script: |
             pwd
             whoami
+            sudo chmod +x /var/www/workspace/script/py_deploy.sh
             /var/www/workspace/script/py_deploy.sh
