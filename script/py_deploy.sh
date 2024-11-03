@@ -22,7 +22,8 @@ done
 PRGDIR=$(cd $(dirname "$PRG"); pwd)
 
 # shellcheck disable=SC2164
-cd ..$PRGDIR
+cd $PRGDIR
+cd ../
 
 # shellcheck disable=SC2009
 ps -ef | grep "python"
