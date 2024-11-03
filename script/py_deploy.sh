@@ -28,7 +28,6 @@ cd ..$PRGDIR
 ps -ef | grep "python"
 
 # shellcheck disable=SC2046
-[[ -f run.pid ]] && kill $(cat run.pid) && rm ~/run.pid
+ps -ef | grep python | grep -v grep | awk '{print $2}' | xargs kill -9
 
-nohup /usr/bin/python3 ./manage.py runserver 127.0.0.1:8000 \
-  > ~/log/app_py_01.log 2>&1 & echo $! > ~/run.pid
+nohup /usr/bin/python3 ./manage.py runserver 127.0.0.1:8000
