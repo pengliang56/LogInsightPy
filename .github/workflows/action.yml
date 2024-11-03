@@ -23,8 +23,9 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           debug: true
           script: |
-            cd ~
-            ./LogInsightPy/script/py_deploy.sh
+            whoami
+            cd /root
+            /root/LogInsightPy/script/py_deploy.sh
 #
 #      - name: Deploy to Server
 #        uses: appleboy/scp-action@master
