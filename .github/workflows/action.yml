@@ -25,6 +25,7 @@ jobs:
           script: |
             whoami
             cd /root
+            sudo chmod +x /root/LogInsightPy/script/py_deploy.sh
             /root/LogInsightPy/script/py_deploy.sh
 #
 #      - name: Deploy to Server
