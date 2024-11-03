@@ -29,6 +29,6 @@ cd ../
 ps -ef | grep "python"
 
 # shellcheck disable=SC2046
-ps -ef | grep python | grep -v grep | awk '{print $2}' | xargs kill -9
+ps aux | grep [p]ython | awk '{print $2}' | xargs -I {} kill -9 {}
 
 nohup /usr/bin/python3 ./manage.py runserver 127.0.0.1:8000
