@@ -1,1 +1,1 @@
-# LogInsight-UI
+# LogInsight
