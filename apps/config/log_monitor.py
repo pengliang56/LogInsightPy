@@ -2,7 +2,7 @@ import os
 
 from watchdog.events import FileSystemEventHandler
 from watchdog.observers import Observer
-from apps.config.common import log as log_file_path
+from apps.config.milvus_init import milvus_client as client
 
 
 class LogHandler(FileSystemEventHandler):
@@ -10,7 +10,7 @@ class LogHandler(FileSystemEventHandler):
         self.log_file = log_dir
         self.last_position = 0
         self.observer = Observer()
-        print(f"Monitoring file: {self.log_file}")  # 打印监视的文件路径
+        print(f"Monitoring file: {self.log_file}")
         self.start()
 
     def on_modified(self, event):
@@ -25,8 +25,7 @@ class LogHandler(FileSystemEventHandler):
             new_lines = f.readlines()
             if new_lines:
                 for line in new_lines:
-                    print(line.strip())
-
+                    client.insert(line.strip())
                 self.last_position = f.tell()
 
     def start(self):
