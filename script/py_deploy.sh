@@ -31,4 +31,7 @@ ps -ef | grep "python"
 # shellcheck disable=SC2046
 ps aux | grep [p]ython | awk '{print $2}' | xargs -I {} kill -9 {}
 
-nohup /usr/bin/python3 ./manage.py runserver 127.0.0.1:8000  --noreload >> ~/log/running_ai.log 2>&1 &
+# install python version 3.9.1
+sudo /usr/bin/pip3.9  install -r requirements.txt  --use-feature=2020-resolver  -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+
+nohup /usr/bin/python3.9 ./manage.py runserver 127.0.0.1:8000  --noreload >> ~/log/running_ai.log 2>&1 &
